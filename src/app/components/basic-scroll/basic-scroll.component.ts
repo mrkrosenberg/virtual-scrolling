@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as faker from 'faker';
 
 @Component({
   selector: 'app-basic-scroll',
@@ -7,7 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicScrollComponent implements OnInit {
 
-  constructor() { }
+  people;
+
+  constructor() {
+
+    this.people = Array(100)
+      .fill(1)
+      .map(_ => {
+
+        return {
+          name: faker.name.findName(),
+          bio: faker.hacker.phrase()
+        };
+
+      });
+
+   }
 
   ngOnInit() {
   }
