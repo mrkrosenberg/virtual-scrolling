@@ -1,7 +1,11 @@
 <!-- takes one argument for the item size - essential when building vertical scroller -->
 <cdk-virtual-scroll-viewport itemSize="100">
 
-
+    <!-- Structural directive from scroller cdk - replaces ngFor but works the same-->
+    <li *cdkVirtualFor="let person of people" class="animated slideInRight">
+        <h2>{{ person.name }}</h2>
+        <p>{{ person.bio }}</p>
+    </li>
 
 
 </cdk-virtual-scroll-viewport>
